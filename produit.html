@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+    	<script src="https://kit.fontawesome.com/29b90813f7.js" crossorigin="anonymous"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/style.css" />
+        <title>Orinoco</title>
+	</head>
+    <body>
+        <div class="container col">
+            <div class="row color_background">
+                <div class="col">
+                    <a href="index.html"><img class="img-fluid" src="logo.png" width="150" height="70" alt="Site logo"></a>
+                </div>
+                <nav class="col offset-md-4 navbar navbar-expand-md navbar-light font-weight-bold">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navbarContent" class="collapse navbar-collapse ">
+                        <ul class="navbar-nav ml-auto text-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html"><i class="fas fa-home "></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">S'enregistrer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="panier.html"><i class="fas fa-shopping-basket"></i>(<span id="nombrePanier"></span>)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="row bg-secondary py-2 ">
+                <div class="col text-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Recherche...">
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="detailProduit" class="row py-5 texture_paper color_background_second ">
+                <div id="detailOption">
+                    <select name="option" class="btn btn-secondary dropdown-toggle" id="optionSelect">
+                        <option value="">Faites votre choix</option>
+                    </select>
+                    <button id="ajoutPanier" class="bouton">Ajouter l'arcticle a votre panier !</button>
+                </div>
+            </div>
+            <div class="footer row">
+                <div class="col text-center color_background">
+                    <img class="mt-5" src="logo.png" width="250" height="100" alt="logo site">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">À propos</a></li>
+                        <li class="list-inline-item"><a href="#e">Besoin d'aide?</a></li>
+                        <li class="list-inline-item"><a href="#">Mentions légales</a></li>
+                        <li class="list-inline-item"><a href="#">Accessibilité</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="JS/lienAPI.js"></script>
+        <script src="JS/produit.js"></script>
+        <script>cameraDetail()</script>
+        <script>addPanier()</script>
+        <script>nombreProduitPanier()</script>
+    </body>
+</html>

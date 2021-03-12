@@ -1,0 +1,103 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "search_bar.scss";
+@import "variable.scss";
+@import "media-queries-medium.scss";
+
+body {
+    height: auto;
+  }
+
+.color_background{
+    background-color: $color_background_princip;
+}
+
+.color_background_second{
+    background-color: $color_background_second;
+}
+
+.color_background_third{
+    background-color: $color_background_third;
+}
+
+.bouton{
+    background-color: $color_background_third;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    outline:0;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .5);
+	cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    &:hover{
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+    }
+      
+}
+
+.border_bottom{
+    border-bottom-left-radius:3em;
+    border-bottom-right-radius:3em;
+}
+
+.texture_paper{
+    background-image: url(/texture-paper.png);
+    background-size: 280px 280px;
+}
+
+.banniere_img{
+    background-image: url(/forest.jpg);
+}
+
+.container_recap{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+}
+
+td, th{
+    border: 1px solid rgb(0, 0, 0);
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+
+.ombre{
+    box-shadow: 8px 10px 6px 1px rgba(100, 0, 0, .6);
+}
+
+.bloc_image{
+    width: 65vw;
+}
+
+.bloc_image_panier{
+    width: 15vw;
+}
+
+.dimension_carte{
+    width: auto;
+    max-width: 400px;
+    height:auto;
+
+}
+
+footer{
+
+    background:#ccc;
+    
+    position:absolute;
+    
+    bottom:0;
+    
+    width:100%;
+    
+    padding-top:50px;
+    
+    height:50px;
+    
+    }
+
+
+
