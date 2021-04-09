@@ -37,6 +37,10 @@ body {
       
 }
 
+.btn-remove{
+    cursor: pointer;
+}
+
 .border_bottom{
     border-bottom-left-radius:3em;
     border-bottom-right-radius:3em;
@@ -54,7 +58,7 @@ body {
 .container_recap{
     padding-top: 2%;
     padding-bottom: 2%;
-    padding-left: 2%;
+    justify-content: center;
 }
 
 td, th{
@@ -97,7 +101,15 @@ footer{
     
     height:50px;
     
-    }
+}
+
+.taille-police-h2{
+    font-size: 2em;
+}
+
+.taille-police-p{
+    font-size: 1.5em;
+}
 
 
 

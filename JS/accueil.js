@@ -1,12 +1,12 @@
 
 async function cameraList() {
-  const camera = await getProduit();
-  
+  const cameras = await getProduit();
+  console.log(cameras)
   /* Lien avec la page index HTML */
   const listeProduit = document.getElementById("listeProduit");
   
   /* Structure index HTML */
-  camera.forEach((produit) => {
+  cameras.forEach((produit) => {
     const produitCarte = document.createElement("div");
     const produitCarteBody = document.createElement("div");
     const produitPhoto = document.createElement("img");
@@ -15,7 +15,6 @@ async function cameraList() {
     const produitNom = document.createElement("h3");
     const produitDescription = document.createElement("p");
     const produitPrix = document.createElement("p");
-  
     /* Ajout des attributs au balise index HTML */
     produitCarte.setAttribute("class", "card overflow-hidden ombre my-5 mx-4 dimension_carte");
     produitCarteBody.setAttribute("class", "card-body color_background_second");

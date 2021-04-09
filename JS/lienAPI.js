@@ -16,6 +16,8 @@ getProduit = () => {
       request.open("GET", "http://localhost:3000/api/cameras/" + idProduit);
       request.send();
     });
-  };
-  
+};
   let idProduit = "";
+  console.log(getProduit())
+
+

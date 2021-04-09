@@ -10,7 +10,7 @@
 
 	</head>
     <body>
-        <div class="container col">
+        <div>
             <div class="row color_background">
                 <div class="col">
                     <a href="index.html"><img class="img-fluid" src="logo.png" width="150" height="70" alt="Site logo"></a>
@@ -37,6 +37,13 @@
                     </div>
                 </nav>     
             </div>
+            <section class= "texture_paper color_background_second">
+                <div>
+                    <h2>Merci pour votre achat <span id="lastName"></span> !</h2>
+                    <p class="taille-police-p">numéro de commande : <span id="orderId"></span></p>
+                    <p class="taille-police-p m-0">Pour revenir à l'accueil de notre boutique cliquez sur ce lien <a href="index.html">Accueil</a></p>
+                </div> 
+            </section>
             <div class="row footer">
                 <div class="col text-center color_background">
                     <img class="mt-5" src="logo.png" width="250" height="100" alt="logo site">
@@ -51,5 +58,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="JS/lienAPI.js"></script>
+        <script src="JS/order.js"></script>
+        <script>infoOrder()</script>
     </body>
 </html>
