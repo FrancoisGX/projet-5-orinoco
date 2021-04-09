@@ -1,16 +1,16 @@
-/*Affichage des informations sur la page de confirmation*/
+//Affichage des informations de la commande sur la page order
 infoOrder = () =>{
 	if(sessionStorage.getItem("order") != null){
     //Parse du session storage
     let order = JSON.parse(sessionStorage.getItem("order"));
-    //Implatation de prénom et de id de commande dans le html sur la page de confirmation
+    //Remplissage du contenu html
     document.getElementById("lastName").innerHTML = order.contact.lastName
     document.getElementById("orderId").innerHTML = order.orderId
     
-    //Suppression de la clé du sessionStorage pour renvoyer au else si actualisation de la page ou via url direct
+    //Suppression du sessionStorage => else si la page est actualisé / si elle est directement ouverte par l'url
     sessionStorage.removeItem("order");
 }else{
-  //avertissement et redirection vers l'accueil
+  //redirection vers l'accueil
   alert("Aucune commande passée, vous êtes arrivé ici par erreur");
   window.open("index.html");
 }

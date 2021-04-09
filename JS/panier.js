@@ -2,7 +2,7 @@ panierRecap = () => {
   if (userPanier.length > 0) {
     document.getElementById("panierVide").remove();
 
-    //Création de la structure du tableau récapitulatif
+    //Création de la structure du tableau récap
     const recap = document.createElement("table");
     recap.setAttribute("class", "col-sm-12 mx-lg-2");
     const ligneTableau = document.createElement("tr");
@@ -15,7 +15,7 @@ panierRecap = () => {
     const colonneTotal = document.createElement("th");
     const recapPrixPaye = document.createElement("td");
 
-    //Placement de la structure dans la page
+    //Structure dans la page
     let recapPanier = document.getElementById("panier-recap");
     recapPanier.appendChild(recap);
     recap.appendChild(ligneTableau);
@@ -25,7 +25,7 @@ panierRecap = () => {
     ligneTableau.appendChild(recapPrixUnitaire);
     ligneTableau.appendChild(recapRemove);
 
-    //contenu des entetes
+    //Contenu des entetes
     recapPhoto.textContent = "Article";
     recapNom.textContent = "Nom";
     recapQuantite.textContent = "Quantité";
@@ -64,7 +64,7 @@ panierRecap = () => {
       //Supprimer un produit du panier
       removeArticle.addEventListener("click", (event) => {this.supprProduit(i);})
 
-      //Agencement de la structure HTML
+      //Agencement de la structure
       recap.appendChild(ligneArticle);
       ligneArticle.appendChild(photoBloc);
       photoBloc.appendChild(photoArticle);
@@ -74,7 +74,7 @@ panierRecap = () => {
       ligneArticle.appendChild(supprimerArticle);
       supprimerArticle.appendChild(removeArticle);
 
-      //Contenu de chaque ligne
+      //Contenu des lignes des produits
       nomArticle.textContent = userPanier[i].nomProduit;
       produitQuantite.textContent = userPanier[i].quantite;
       prixUnitArticle.textContent = userPanier[i].prix  + " €";
@@ -82,7 +82,7 @@ panierRecap = () => {
     };
 
 
-    //Dernière ligne du tableau 
+    //Ligne somme total
     recap.appendChild(ligneTotal);
     ligneTotal.appendChild(colonneTotal);
     colonneTotal.textContent = "Total à payer";
@@ -98,7 +98,7 @@ panierRecap = () => {
       sommeTotal += userPanier.prix*userPanier.quantite ;
     });
 
-    //Affichage du prix total à payer dans l'addition
+    //Affichage du prix total à payer
     console.log(sommeTotal);
     document.getElementById("sommeTotal").textContent = sommeTotal + " €";
   }
@@ -121,7 +121,7 @@ supprProduit = (i) =>{
 
 //--------FORMULAIRE---------//
 
-//vérifie les inputs du formulaire
+//Check des différents input du formulaire
 checkFormulaire = () => {
   //Controle Regex
   const checkNumber = /[0-9]/;
@@ -249,7 +249,7 @@ checkPanier = () =>{
 };
 
   let contact;
-  //Au click sur le btn de validation du formulaire
+  //Au click sur le bouton commander
   validFormulaire = () =>{
     //Ecoute de l'event click du formulaire
     let btnForm = document.getElementById("commander");
@@ -281,7 +281,7 @@ checkPanier = () =>{
 };
 
 let url= "http://localhost:3000/api/cameras/order";
-/*Envoi du formulaire*/
+//Envoi du formulaire
   //Fonction requet post de l'API
   const envoiFormulaire = (envoiForm, url) => {
     return new Promise((resolve) => {

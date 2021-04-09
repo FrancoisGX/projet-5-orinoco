@@ -2,10 +2,10 @@ async function cameraDetail() {
     idProduit = location.search.substring(4);
     const produitSelect = await getProduit();
     console.log(produitSelect)
-    /* Lien avec la page produit*/
+    // Lien avec la page produit
     let detailProduit = document.getElementById("detailProduit");
     
-    /* Structure index produit */
+    // Structure HTML
     const contenantPhoto = document.createElement("div");
     const blocPhoto = document.createElement("div");
     const produitPhoto = document.createElement("img");
@@ -17,7 +17,7 @@ async function cameraDetail() {
     const ajoutPanier = document.getElementById("ajoutPanier")
   
     
-    /* Ajout des attributs au balise produit */
+    // Ajout des attributs
     contenantPhoto.setAttribute("class", "col-12 col-md-6 d-flex justify-content-center ");
     blocPhoto.setAttribute("class", "card bloc_image overflow-hidden border ombre bg-secondary");
     produitPhoto.setAttribute("img", "img-fluid border_img image");
@@ -28,7 +28,7 @@ async function cameraDetail() {
     produitPrix.setAttribute("class", "col-12 taille-police-p");
     contenantDetail.setAttribute("class", "col-12 col-md-6 mt-2" );
     
-    /* Arborescence des éléments produit */
+    // Arborescence des éléments
     detailProduit.appendChild(contenantPhoto);
     contenantPhoto.appendChild(blocPhoto);
     blocPhoto.appendChild(produitPhoto);
@@ -39,7 +39,7 @@ async function cameraDetail() {
     contenantDetail.appendChild(produitPrix);
     contenantDetail.appendChild(ajoutPanier);
   
-    /* Contenu des balises produit */
+    // Contenu des balises
     produitNom.innerText = produitSelect.name;      
     produitDescription.innerText=produitSelect.description;
     produitPrix.innerText="Prix: " + produitSelect.price / 100 +" €";
@@ -51,14 +51,14 @@ async function cameraDetail() {
     
 }
 
-//L'user a maintenant un panier
+//Declarer le panier utilisateur
 let userPanier = JSON.parse(localStorage.getItem("userPanier"));
-/* Creation d'un panier utilisateur */
+// Creation d'un panier utilisateur
 if(localStorage.getItem("userPanier")){
 	console.log("Admin : le panier de l'utilisateur existe dans le localStorage");
 }else{
 	console.log("Admin: Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage");
-  	//Le panier est un tableau de produits
+  	//Le panier est un tableau de produits dans le localStorage
   	let userPanier = [];
   	localStorage.setItem("userPanier", JSON.stringify(userPanier));
   };
@@ -84,7 +84,8 @@ function ajouterPanier(){
   } 
   console.log(detailCamera)
 
-//Récupération du panier dans le localStorage et ajout du produit dans le panier avant recoit dans le localStorage
+//Vérification des produits dans le panier
+//incrémentation de quantité si produit == produit si non ajout d'un nouveau produit
   const verif = userPanier.find(produit => detailCamera.id_Produit == produit.id_Produit )
   if(verif != undefined){
     console.log(verif);
@@ -93,7 +94,7 @@ function ajouterPanier(){
     userPanier.push(detailCamera);
     console.log(verif);
   }
-  
+  //Récupération du panier dans le localStorage
   localStorage.setItem("userPanier", JSON.stringify(userPanier));
   alert("Vous avez ajouté ce produit dans votre panier")
   location.reload();

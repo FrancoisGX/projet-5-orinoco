@@ -2,10 +2,10 @@
 async function cameraList() {
   const cameras = await getProduit();
   console.log(cameras)
-  /* Lien avec la page index HTML */
+  // Lien avec la page index HTML 
   const listeProduit = document.getElementById("listeProduit");
   
-  /* Structure index HTML */
+  // Structure de la page index HTML 
   cameras.forEach((produit) => {
     const produitCarte = document.createElement("div");
     const produitCarteBody = document.createElement("div");
@@ -15,7 +15,7 @@ async function cameraList() {
     const produitNom = document.createElement("h3");
     const produitDescription = document.createElement("p");
     const produitPrix = document.createElement("p");
-    /* Ajout des attributs au balise index HTML */
+    // Ajout des attributs pour les balises
     produitCarte.setAttribute("class", "card overflow-hidden ombre my-5 mx-4 dimension_carte");
     produitCarteBody.setAttribute("class", "card-body color_background_second");
     produitPhoto.setAttribute("class", "img-fluid");
@@ -28,7 +28,7 @@ async function cameraList() {
     produitDescription.setAttribute("class", "card-text");
     produitPrix.setAttribute("class", "card-text font-weight-bold");
   
-    /* Arborescence des éléments index HTML */
+    // Arborescence des éléments
     listeProduit.appendChild(produitCarte);
     produitCarte.appendChild(produitCarteBody);
     produitCarteBody.appendChild(produitPhoto);
@@ -38,7 +38,7 @@ async function cameraList() {
     produitTexte.appendChild(produitDescription);
     produitTexte.appendChild(produitPrix);
   
-    /* Contenu des balises index HTML */
+    // Contenu des balises
     produitNom.innerText = produit.name;      
     produitDescription.innerText=produit.description;
     produitPrix.innerText="Prix: " + produit.price / 100 +" €";
